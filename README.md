@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# **Программное средство мониторинга генерального плана города в части обеспечения граждан социально значимыми объектами (клиентская часть)**
+
+Ссылки на репозиторий сервера с более подробным описанием проекта в соответствующем README-файле: https://github.com/SanyaShbn/city-general-plan-monitoring-system-backend
+>>>>>>> c6ec558e158b60cf74b3f43d9dd33aa41e60addd
