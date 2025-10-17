@@ -1,27 +1,57 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Box, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Outlet, Link, useLocation } from "react-router-dom";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import logoWhite from '../assets/logo_white.png';
 
 const drawerWidth = 240;
 
 const navItems = [
-  { to: '/dashboard', label: 'Дашборд' },
-  { to: '/objects', label: 'Объекты' },
-  { to: '/deviations', label: 'Отклонения' },
-  { to: '/export', label: 'Экспорт' },
-  { to: '/milestones', label: 'Этапы' },
-  { to: '/applications', label: 'Заявки' },
+  { to: "/dashboard", label: "Дашборд" },
+  { to: "/objects", label: "Объекты" },
+  { to: "/deviations", label: "Отклонения" },
+  { to: "/export", label: "Экспорт" },
+  { to: "/milestones", label: "Этапы" },
+  { to: "/applications", label: "Заявки" },
 ];
 
 export default function MainLayout() {
   const location = useLocation();
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+    <Box sx={{ display: "flex" }}>
+      <AppBar
+        position="fixed"
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      >
         <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            Генплан — мониторинг реализации
-          </Typography>
+          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+            {/* Логотип */}
+            <Box
+              component="img"
+              src={logoWhite}
+              alt="Логотип системы мониторинга"
+              sx={{
+                width: 60,
+                height: 60,
+                mr: 2,
+                objectFit: "contain",
+              }}
+            />
+
+            {/* Текст */}
+            <Typography variant="h6" noWrap component="div">
+              Генплан — мониторинг реализации
+            </Typography>
+          </Box>
         </Toolbar>
       </AppBar>
 
@@ -30,15 +60,22 @@ export default function MainLayout() {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+          [`& .MuiDrawer-paper`]: {
+            width: drawerWidth,
+            boxSizing: "border-box",
+          },
         }}
       >
         <Toolbar />
-        <Box sx={{ overflow: 'auto' }}>
+        <Box sx={{ overflow: "auto" }}>
           <List>
             {navItems.map((item) => (
               <ListItem key={item.to} disablePadding>
-                <ListItemButton component={Link} to={item.to} selected={location.pathname === item.to}>
+                <ListItemButton
+                  component={Link}
+                  to={item.to}
+                  selected={location.pathname === item.to}
+                >
                   <ListItemText primary={item.label} />
                 </ListItemButton>
               </ListItem>
